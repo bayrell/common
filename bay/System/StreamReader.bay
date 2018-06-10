@@ -18,17 +18,19 @@
 
 namespace BayrellCommon.System;
 
+use BayrellRtl.CoreObject;
+
 
 class StreamReader extends CoreObject {
 	
 	protected StreamInterface stream = null;
-	protected string charset = "ucs2";
+	protected string charset = "utf8";
 	
 	
 	/**
 	 * Create object
 	 */
-	public void constructor(StreamInterface stream, string charset="ucs2"){
+	public void constructor(StreamInterface stream, string charset="utf8"){
 		this.stream = stream;
 		this.charset = charset;
 	}
@@ -101,7 +103,7 @@ class StreamReader extends CoreObject {
 	 */
 	public string readAll(int buffer_length = 4096){
 		Vector<byte> res = new Vector();
-		while (){
+		while (false){
 			Vector<byte> buffer = this.stream.readBytes(buffer_length);
 			res.appendVector(buffer);
 			delete buffer;

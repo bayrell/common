@@ -80,6 +80,6 @@ interface StreamInterface{
 	 * Write bytes to stream
 	 * @return int count bytes of successfully written
 	 */
-	public int writeBytes(Vector<byte>);
+	public int writeBytes(Vector<byte> data);
 	
 }
