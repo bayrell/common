@@ -1,0 +1,85 @@
+/*!
+ *  Bayrell Common Library
+ *
+ *  (c) Copyright 2016-2018 "Ildar Bikmamatov" <support@bayrell.org>
+ *
+ *  Licensed under the Apache License, Version 2.0 (the "License");
+ *  you may not use this file except in compliance with the License.
+ *  You may obtain a copy of the License at
+ *
+ *      https://www.bayrell.org/licenses/APACHE-LICENSE-2.0.html
+ *
+ *  Unless required by applicable law or agreed to in writing, software
+ *  distributed under the License is distributed on an "AS IS" BASIS,
+ *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ *  See the License for the specific language governing permissions and
+ *  limitations under the License.
+ */
+
+namespace BayrellCommon.System;
+
+
+interface StreamInterface{
+	
+	
+	/**
+	 * Returns if can read from stream
+	 * @return bool
+	 */
+	public bool canRead();
+	
+	
+	/**
+	 * Returns if can write to stream
+	 * @return bool
+	 */
+	public bool canWrite();
+	
+	
+	/**
+	 * Returns if can move cursor
+	 * @return bool
+	 */
+	public bool canSeek();
+	
+	
+	/**
+	 * Returns current cursor position
+	 */
+	public int getCurrentPos();
+	
+	
+	/**
+	 * Move cursor position
+	 */
+	public void seek(int offset, int origin);
+	
+	
+	/**
+	 * Returns available bytes to read
+	 * @param int length
+	 * @return int
+	 */
+	public int getAvailableBytes(int length);
+	
+	
+	/**
+	 * Is file EOF
+	 * @return bool
+	 */
+	public bool isEOF();
+	
+	
+	/**
+	 * Read bytes from stream
+	 */
+	public Vector<byte> readBytes(int length);
+	
+	
+	/**
+	 * Write bytes to stream
+	 * @return int count bytes of successfully written
+	 */
+	public int writeBytes(Vector<byte>);
+	
+}
