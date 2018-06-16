@@ -21,37 +21,42 @@ namespace BayrellCommon.FileSystem;
 
 interface FileSystemInterface{
 	
+	
 	/**
 	 * Returns files and folders from directory
 	 * @param string basedir
-	 * @param Vector<string> res - Result
+	 * @return Vector<string> - Result
 	 */
-	public void getDirectoryListing(string basedir="", Vector<string> res);
+	public Vector<string> getDirectoryListing(string basedir="");
+	
 	
 	
 	/**
 	 * Returns recursive files and folders from directory
 	 * @param string basedir
-	 * @param Vector<string> res - Result
+	 * @return Vector<string> - Result
 	 */
-	public void readDirectoryRecursive(string basedir="", Vector<string> res);
+	public Vector<string> readDirectoryRecursive(string basedir="");
+	
 	
 	
 	/**
 	 * Returns recursive only files from directory
 	 * @param string basedir
-	 * @param Vector<string> res - Result
+	 * @return Vector<string> - Result
 	 */
-	public void getFilesRecursive(string basedir="", Vector<string> res);
+	public Vector<string> getFilesRecursive(string basedir="");
 
 	
+	
 	/**
-	 * Returns files content
+	 * Returns content of the file
 	 * @param string filepath
 	 * @param string charset
 	 * @return string
 	 */
-	public string loadFile(string filepath="", string charset="utf8");
+	public string readFile(string filepath="", string charset="utf8");
+	
 	
 	
 	/**
@@ -63,6 +68,7 @@ interface FileSystemInterface{
 	public void saveFile(string filepath="", string content="", string charset="utf8");
 	
 	
+	
 	/**
 	 * Open file
 	 * @param string filepath
@@ -72,11 +78,21 @@ interface FileSystemInterface{
 	public FileInterface openFile(string filepath="", string mode="");
 	
 	
+	
 	/**
 	 * Make dir
 	 * @param string dirpath
 	 * @param boolean create_parent. Default is true
 	 */
 	public void makeDir(string dirpath="", bool create_parent=false);
+	
+	
+	
+	/**
+	 * Return true if path is folder
+	 * @param string path
+	 * @param boolean 
+	 */
+	public void isDir(string path);
 	
 } 

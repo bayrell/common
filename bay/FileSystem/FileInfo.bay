@@ -19,25 +19,10 @@
 namespace BayrellCommon.FileSystem;
 
 
-interface FileInterface{
+class FileInfo{
 	
+	public string path = "";
 	
-	/**
-	 * Returns stream
-	 */
-	public StreamInterface getStream();
-	
-	
-	/**
-	 * Flush file
-	 */
-	public void flush();
-	
-	
-	/**
-	 * Close files
-	 */
-	public void close();
 	
 	
 }
