@@ -18,7 +18,7 @@
 
 namespace BayrellCommon.System;
 
-use BayrellRtl.CoreObject;
+use Runtime.CoreObject;
 
 
 class StreamReader extends CoreObject {
