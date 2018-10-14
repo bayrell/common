@@ -27,15 +27,15 @@ use Runtime.Interfaces.ContextInterface;
 
 class AssertError extends RuntimeException{
 	
-	void constructor(ContextInterface context, string message, Object prev = null){
+	void constructor(string message, ContextInterface context, Object prev = null){
 		
 		if (message == "") 
 			message = Utils::translate("ERROR_ASSERT", null, "", context);
 		
 		parent(
-			context, 
 			message,
-			RuntimeConstant::ERROR_ASSERT, 
+			RuntimeConstant::ERROR_ASSERT,
+			context,
 			prev
 		);
 	}
